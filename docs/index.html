@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { height: 100%; margin: 0; width: 100%; overflow: hidden; }
+      #graphiql { height: 100vh; }
+    </style>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAPv/AEAAAABwAAAAOAAAAD4AAAAfAAAAD8AAAAfgAAB/8AAAP+AAAB+AAAAHwAAAAeAAAADwAAAAOAAAABgAAAAAAAC//wAAj/8AAMf/AADB/wAA4P8AAPA/AAD4HwAAgA8AAMAfAADgfwAA+D8AAP4fAAD/DwAA/8cAAP/nAAD//wAA" />
+
+    <!-- CDN -x->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.17.5/graphiql.min.css" rel="stylesheet" />
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch,Array.prototype.includes">
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.17.5/graphiql.js"></script>
+    <!-x- CDN -->
+
+    <!-- Local -->
+    <link href="graphiql.min.css" rel="stylesheet" />
+    <script src="lib-bundle.js"></script>
+
+    <!-- Local -->
+    <style>
+      .jwt-token, .url-input {
+        width: 100%; padding: 7px 14px 6px;
+        background: linear-gradient(#f7f7f7, #e2e2e2);
+        border-bottom: 1px solid #d0d0d0;
+        font-family: system, -apple-system, helvetica, 'Lucida Grande', arial, sans-serif;
+        /* font-size: 14px; */
+      }
+      .jwt-token { width: 50%; }
+      #jwt-token { width: 100%; }
+      .url-input > input { width: 80%; }
+    </style>
+  </head>
+  <body>
+    <div class="url-input">
+      <input id="url_input" placeholder="Custom GraphQL API URL" />
+      <button class="toolbar-button" onclick="updateUrl()">Update schema</button>
+      <button class="toolbar-button" onclick="resetUrl()">Reset URL</button>
+    </div>
+
+    <div id="graphiql">Loading...</div>
+
+    <script defer="defer" src="main.js"></script>
+  </body>
+</html>
